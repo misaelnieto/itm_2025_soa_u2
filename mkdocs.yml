@@ -1,0 +1,26 @@
+site_name: Arquitectura Orientada a Servicios
+nav:
+  - Inicio: index.md
+  - Documentación de servicios web: proyectos/index.md
+  - Guía técnica: ayuda.md
+theme:
+  name: material
+  locale: es
+  language: es
+
+markdown_extensions:
+  - toc:
+      permalink: "#"
+  - admonition
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - mkdocs-click
+
+plugins:
+- mkdocstrings:
+    handlers:
+      python:
+        locale: es
+        paths:
+          - tests
+          - webservice

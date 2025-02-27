@@ -1,13 +1,10 @@
-"""Etapa 1 del proyecto de la alcancía de Noe Nieto.
+"""Este módulo contiene la etapa 1 del proyecto de la Alcancía.
 
-Este módulo contiene la implementación de la etapa 1 del proyecto de la
-alcancía.
-
-En la etapa 1 se implementa el servicio web de la alcancía con las siguientes
-operaciones: - saldo: Devuelve el saldo actual de la alcancía. - deposito:
-Deposita una cantidad en la alcancía y devuelve el nuevo saldo. - retiro: Retira
-una cantidad de la alcancía y devuelve el nuevo saldo. - movimientos: Devuelve
-la lista de movimientos de la alcancía.
+Operaciones: 
+    - `saldo`: Devuelve el saldo actual de la alcancía.
+    `deposito`: Deposita una cantidad en la alcancía y devuelve el nuevo saldo.
+    `retiro`: Retira una cantidad de la alcancía y devuelve el nuevo saldo.
+    `movimientos`: Devuelve la lista de movimientos de la alcancía.
 
 En esta etapa, las operaciones de deposito y retiro simplemente devuelven el
 doble y el triple de la cantidad depositada o retirada, respectivamente. No hay

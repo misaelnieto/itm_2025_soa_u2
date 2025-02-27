@@ -16,6 +16,7 @@ dependencies = [
     "mkdocstrings[python]>=0.28.2",
     "pytest>=8.3.4",
     "pytest-cov>=6.0.0",
+    "ruff>=0.9.7",
     "spyne",
     "suds>=1.2.0",
     "werkzeug>=3.1.3",

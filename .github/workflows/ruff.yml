@@ -1,4 +1,4 @@
-name: CI
+name: Analisis estatico de código
 on: push
 jobs:
   build:

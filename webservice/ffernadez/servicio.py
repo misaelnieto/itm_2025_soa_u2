@@ -18,7 +18,7 @@ class PerritosService(Service):
             Perrito(nombre="Firulais", raza="Mixta"),
         ]
 
-    @srpc(String, String, _returns=String)
+    @srpc(String, String, _returns=String,)
     def registrar(nombre, raza):
         return "OK"
     

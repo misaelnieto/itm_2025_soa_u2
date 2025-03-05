@@ -2,4 +2,5 @@ Indice de proyectos
 
 | Nombre | Módulo | Documentación de servicio web                        |
 | ----------- | -------------- | ---
-| Noe Nieto   | `nnieto`  | Alcancía |
+| Fulano Fernandez   | `ffernandez`  | [Perritos](ffernandez/) |
+| Noe Nieto   | `nnieto`  | [Alcancía](nnieto/) |

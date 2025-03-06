@@ -12,8 +12,6 @@ def ws(wsgi_live_server):
 
 
 
-
-
 def test_wsdl_metadata(ws):
     """Test that our server provides valid WSDL metadata."""
     # First check the target namespace is correct. This will fail when you change the tns in the webservice.py
@@ -28,14 +26,42 @@ def test_wsdl_metadata(ws):
     assert svc_port.name == 'Movies'
 
     # Has 4 methods and 3 types
-    assert len(svc_port.methods) == 5
-    assert len(sd.types) == 12
+    assert len(svc_port.methods) == 7
+    assert len(sd.types) == 17
 
 
 
 def test_service_methods(ws):
+
+    # Agregar titanic
+    ws.service.addMovie('Titanic',1997,'James Cameron')  
+
+
+    # Agregar otra pelicula
+    response = ws.service.addMovie('A new hope',1977,'George Lucas')
+    assert response == "Pelicula agrega correctamente"  # < -- Comprobar que nos retorno la respuesta de exito
     
-    assert len(ws.service.getMovies()) == 0
+
+
+
+    # Vamos a agregar una pelicula con datos erroneos
+    ws.service.addMovie('The shawshank redemption',1990,'Tobey Maguire')  
+    response = ws.service.changeRelease("The shawshank redemption",1994)
+    assert response == "El año de lanzamiento de la pelicula The shawshank redemption fue modificado a 1994"
+    response = ws.service.changeDirector("The shawshank redemption","Frank Darabont")
+    assert response == "El director de la pelicula The shawshank redemption fue modificado a Frank Darabont"
+    # Intentar cambiar el nombre de una pelicula que no existe
+    response = ws.service.changeName("Me gusta la gasolina","nuevo nombre XDXDXD")
+    assert response == "No existe la pelicula que quieres modificar"
+
+
+
+    # Eliminar una pelicula
+    response = ws.service.deleteMovie("The shawshank redemption")
+    assert response == "La pelicula se elimino con exito"
+
+
+    
 
 
 

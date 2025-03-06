@@ -3,13 +3,10 @@ from spyne.protocol.soap import Soap11
 from spyne.server.wsgi import WsgiApplication
 
 
-
-
 class Movie(ComplexModel):
     name = String
     release = Integer
     director = String
-    next = ComplexModel
     
 class MoviesServices(Service):
 
@@ -37,7 +34,7 @@ class MoviesServices(Service):
 
     @srpc(_returns=Array(Movie))
     def getMovies():
-        return MoviesServices.Movies[1]
+        return MoviesServices.Movies
 
 
     @srpc(String,_returns=String)

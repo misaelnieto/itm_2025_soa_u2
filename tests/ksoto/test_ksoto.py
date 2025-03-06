@@ -25,7 +25,7 @@ def test_wsdl_metadata(ws):
     svc_port = sd.service.ports[0]
     assert svc_port.name == 'Movies'
 
-    # Has 4 methods and 3 types
+    # Has 7 methods and 16 types
     assert len(svc_port.methods) == 7
     assert len(sd.types) == 16
 

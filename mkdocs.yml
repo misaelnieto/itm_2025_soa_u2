@@ -1,12 +1,43 @@
 site_name: Arquitectura Orientada a Servicios
+use_directory_urls: true
+repo_url: https://github.com/misaelnieto/itm_2025_soa_u2/
+site_description: Documentación de la Unidad 2 de la materia de Arquitectura Orientada a Servicios
+site_author: Noe Nieto
+
 nav:
-  - Inicio: index.md
-  - Configuracion de tu entorno: configuracion.md
-  - Documentación de servicios web: proyectos/index.md
+  - Tutorial: 
+    - Introducción: tutorial/index.md
+    - Paso 1 - Winget: tutorial/winget.md
+    - Paso 2 - Git: tutorial/git.md
+    - Paso 3 - Repositorio: tutorial/repositorio.md
+    - Paso 4 - UV: tutorial/uv.md
+    - Paso 5 - Implementación: tutorial/implementacion.md
+    - Paso 6 - Pruebas de integración: tutorial/pytest.md
+    - Paso 7 - Analisis estatico: tutorial/ruff.md
+    - Paso 8 - Documentación: tutorial/mkdocs.md
+    - Paso 9 - Pull Request: tutorial/pr.md
+  - Herramientas:
+    - webservice: herramientas/webservice.md
+  - Proyectos: servicios/index.md
 theme:
   name: material
-  locale: es
   language: es
+  palette:
+    scheme: slate
+  font:
+    text: Noto Serif
+    code: Ubuntu Mono
+  icon:
+    logo: material/puzzle
+  features:
+    - navigation.instant
+    - navigation.instant.progress
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.path
+    - toc.integrate
+    - navigation.top
+
 
 markdown_extensions:
   - toc:
@@ -15,6 +46,11 @@ markdown_extensions:
   - pymdownx.tasklist:
       custom_checkbox: true
   - mkdocs-click
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
 
 plugins:
 - mkdocstrings:

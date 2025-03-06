@@ -1,21 +1,6 @@
-## Configuración de tu entorno de trabajo
+# Paso 2: Git
 
-Sigue esta guía para configurar tu entorno de desarrollo. Asumimos que tu
-computadora esta corriendo una versión reciente de Windows 11.
-
-Una vez que tengas configurado tu entorno de desarrollo podrás continuar a
-desarrollar tu servicio web asignado.
-
-## Paso 1: Winget
-
-Abre una ventana de PowerShell o Windows Terminal y escribe el comando `winget`. Si en la pantalla ves un mensaje parecido a este>
-
-> `wingeto : El término 'wingeto' no se reconoce como nombre de un cmdlet`
-
-Deberas seguir la guía de instalación de winget desde la página de Microsoft https://learn.microsoft.com/es-es/windows/package-manager/winget/
-
-
-## Paso 2: Instalando y configurando git
+## Instalación
 
 Instala `git` con el siguiente comando:
 
@@ -23,7 +8,9 @@ Instala `git` con el siguiente comando:
 winget install -e --id Git.Git
 ```
 
-Una vez instalado debes configurar `git` con tu nombre y correo electronico
+## Configuración de nombre y correo
+
+Una vez instalado debes configurar `git` con tu nombre y correo electrónico.
 
 ```powershell
 git config --global user.name "Fulano Fernandez"
@@ -32,6 +19,8 @@ git config --global user.email ffernandez@example.com
 
 !!! note "Usa el email que registraste en GitHub"
     Usa el email que registraste en GitHub para que se asocien los *commits* correctamente a tu nombre de usuario.
+
+## Configuración de SSH
 
 La manera más confiable para interactuar con repositorios de github es mediante
 el protocolo SSH. Para eso tienes que generar un par de llaves público/privadas
@@ -121,82 +110,3 @@ Deberías ver el siguiente mensaje:
 ```
 Hi ffernandez! You've successfully authenticated, but GitHub does not provide shell access.
 ```
-
-## Clona el repositorio y crea tu rama de trabajo
-
-
-```powershell
-git clone git@github.com:misaelnieto/itm_2025_soa_u2.git
-cd itm_2025_soa_u2
-git switch --create fferndez-servicioweb
-```
-
-
-### Instalación de python, `uv` y entorno virtual
-
-Sigue el proceso de instalación de `uv` desde la página oficial https://docs.astral.sh/uv/.
-
-Una vez que hayas instalado y configurado `uv`, cincroniza las dependencias y versión de python con el siguiente comando:
-
-```powershell
-uv sync
-```
-
-La primera vez que corras este comando, `uv` descargará la versión de Python
-adecuada, creara un entorno virtual e instalará todas las dependencias
-necesarias para tus prácticas.
-
-
-## Arrancando el servidor web de desarrollo
-
-```
-uv run webservice --debug
-```
-
-Cuando hagas cambios en tu código, el servidor reiniciará automáticamente. Recuerda revisar los errores y advertencias en la terminal donde estas ejecutando el servidor. Presiona `Ctrl`+`C` para terminar la ejecución del servidor de pruebas.
-
-## Corriendo las pruebas con pytest
-
-El siguiente comando correrá todas las pruebas contenidas en el módulo `tests`
-
-```
-uv run pytest
-```
-
-Si solo deseas correr las pruebas las pruebas contenidas en tu módulo asignado de pruebas, simplemente proporciona la ruta al módulo que contiene la prueba que deseas correr. Por ejemplo, si tu prueba esta en `tests/test_ffernandez.py`, el comando de `pytest` sería:
-
-
-```
-uv run pytest tests/test_ffernandez.py
-```
-
-También es posible correr una sola prueba dentro de un módulo de la siguiente manera:
-
-
-```
-uv run pytest tests/test_ffernandez.py::test_abc
-```
-
-Consulta la documentación de `pytest` en https://docs.pytest.org/en/stable/ para obtener más información acerca de su uso y sus diferentes maneras de invocar y depurar pruebas.
-
-
-### Corriendo el analizador de código estático
-
-WIP
-
-```
-uv run ruff check .
-```
-
-### Editor de código
-
-Puedes usar el editor de código de tu preferencia. El profesor usa Visual Studio Code y ha pre-configurado el entorno para que te sea más fácil desarrollar tu trabajo.
-
-
-
-## Referencia de la herramienta de línea de comandos `webservice`
-
-
-::: mkdocs-click
-    :module: webservice.app
-    :command: main

@@ -8,6 +8,9 @@ Tenemos el archivo webservice/ksoto/servicio.py, en este archivo tenemos el serv
 
 
 
+
+
+
 Aqui solo estamos haciendo las importaciones que vamos a utlizar en nuestro codigo, como podemos ver, todo viene de la libreria spyne.
 
     from spyne import Service, ComplexModel, String, Integer, srpc, Application, Array

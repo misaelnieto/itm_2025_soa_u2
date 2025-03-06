@@ -1,4 +1,4 @@
-from decimal import Decimal
+"""Test del webservice de libreria."""
 
 import pytest
 from suds.client import Client as SoapClient
@@ -78,7 +78,6 @@ def test_service_methods(ws):
     # Verificamos que si se actualizo
     op = ws.service.buscar("El señor de los anillos 2")
     assert op.titulo == "El señor de los anillos 2"
-
 
     op = ws.service.actualizar(1231241)
     assert op.status == "ERROR"

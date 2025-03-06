@@ -12,14 +12,14 @@ En una implementacion real, se recomienda utilizar una base de datos para persis
 """
 
 from spyne import (
-    Service,
-    srpc,
     AnyDict,
-    String,
-    ComplexModel,
-    Array,
     Application,
+    Array,
+    ComplexModel,
     Integer,
+    Service,
+    String,
+    srpc,
 )
 from spyne.protocol.soap import Soap11
 from spyne.server.wsgi import WsgiApplication
@@ -52,7 +52,7 @@ class LibreriaService(Service):
     def buscar(titulo, isbn):
         """Busca un libro por titulo o ISBN y retorna el que haga match."""
         for libro in libros:
-            if libro.titulo.lower() == titulo.lower() or libro.ISBN == isbn:
+            if libro.titulo.lower() == titulo.lower() or isbn == libro.ISBN:
                 return {
                     "titulo": libro.titulo,
                     "autor": libro.autor,
@@ -65,7 +65,7 @@ class LibreriaService(Service):
     def agregar(titulo, autor, isbn):
         """Agrega un nuevo libro a la lista."""
         for libro in libros:
-            if libro.ISBN == isbn:
+            if isbn == libro.ISBN:
                 return {"status": "ERROR", "mensaje": "El ISBN ya existe"}
         libros.append(Libro(titulo=titulo, autor=autor, ISBN=isbn))
         return {"titulo": titulo, "autor": autor, "ISBN": isbn, "status": "OK"}
@@ -74,7 +74,7 @@ class LibreriaService(Service):
     def eliminar(titulo, isbn):
         """Elimina un libro por titulo o ISBN."""
         for i, libro in enumerate(libros):
-            if libro.titulo  == titulo or libro.ISBN == isbn:
+            if libro.titulo  == titulo or isbn == libro.ISBN:
                 libros.pop(i)
                 return {"status": "OK", "mensaje": "Libro eliminado"}
         return {"status": "ERROR", "mensaje": "Libro no encontrado"}
@@ -83,7 +83,7 @@ class LibreriaService(Service):
     def actualizar(isbn, nuevo_titulo, nuevo_autor):
         """Modifica los datos de un libro existente mediante su ISBN."""
         for libro in libros:
-            if libro.ISBN == isbn:
+            if isbn == libro.ISBN:
                 libro.titulo = nuevo_titulo
                 libro.autor = nuevo_autor
                 return {"status": "OK", "mensaje": "Libro actualizado"}

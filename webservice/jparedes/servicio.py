@@ -81,7 +81,7 @@ class LibreriaService(Service):
     def eliminar(titulo, isbn):
         """Elimina un libro por titulo o ISBN."""
         for i, libro in enumerate(libros):
-            if libro.titulo  == titulo or isbn == libro.ISBN:
+            if libro.titulo == titulo or isbn == libro.ISBN:
                 libros.pop(i)
                 return {"status": "OK", "mensaje": "Libro eliminado"}
         return {"status": "ERROR", "mensaje": "Libro no encontrado"}

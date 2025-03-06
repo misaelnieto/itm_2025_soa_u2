@@ -51,6 +51,8 @@ class LibreriaService(Service):
     @srpc(String, Integer, _returns=AnyDict)
     def buscar(titulo, isbn):
         """Busca un libro por titulo o ISBN y retorna el que haga match."""
+        if titulo is None and isbn is None:
+            return {"status": "ERROR", "mensaje": "Debe especificar titulo o ISBN"}
         for libro in libros:
             if libro.titulo.lower() == titulo.lower() or isbn == libro.ISBN:
                 return {
@@ -61,7 +63,12 @@ class LibreriaService(Service):
                 }
         return {"status": "ERROR", "mensaje": "Libro no encontrado"}
 
-    @srpc(String, String, Integer, _returns=AnyDict)
+    @srpc(
+        String(min_len=5, nillable=False, min_occurs=1),
+        String(min_len=5, nillable=False),
+        Integer(nillable=False),
+        _returns=AnyDict,
+    )
     def agregar(titulo, autor, isbn):
         """Agrega un nuevo libro a la lista."""
         for libro in libros:
@@ -70,16 +77,21 @@ class LibreriaService(Service):
         libros.append(Libro(titulo=titulo, autor=autor, ISBN=isbn))
         return {"titulo": titulo, "autor": autor, "ISBN": isbn, "status": "OK"}
 
-    @srpc(String, Integer, _returns=AnyDict)
+    @srpc(String(nillable=False), Integer(nillable=False), _returns=AnyDict)
     def eliminar(titulo, isbn):
         """Elimina un libro por titulo o ISBN."""
         for i, libro in enumerate(libros):
-            if libro.titulo  == titulo or isbn == libro.ISBN:
+            if libro.titulo == titulo or isbn == libro.ISBN:
                 libros.pop(i)
                 return {"status": "OK", "mensaje": "Libro eliminado"}
         return {"status": "ERROR", "mensaje": "Libro no encontrado"}
 
-    @srpc(Integer, String, String, _returns=AnyDict)
+    @srpc(
+        Integer(nillable=False),
+        String(nillable=False),
+        String(nillable=False),
+        _returns=AnyDict,
+    )
     def actualizar(isbn, nuevo_titulo, nuevo_autor):
         """Modifica los datos de un libro existente mediante su ISBN."""
         for libro in libros:

@@ -28,7 +28,7 @@ def test_wsdl_metadata(ws):
 
     # Has 4 methods, and 10 types
     assert len(svc_port.methods) == 5
-    assert len(sd.types) == 12
+    assert len(sd.types) == 14
 
 
 def test_service_methods(ws):

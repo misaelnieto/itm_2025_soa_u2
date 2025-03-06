@@ -157,3 +157,26 @@ spyne_app = Application(
 
 
 wsgi_app = WsgiApplication(spyne_app)
+
+
+
+
+
+
+ -------------------------------------------------------------------------------------
+
+
+
+
+
+Ahora explicare lo que tenemos en el archivo _init_.py
+
+
+        from .servicio import wsgi_app
+
+        wsgi_apps = {
+            'ksoto/movies': wsgi_app,
+        }
+
+
+En python, un archivo llamado _init_.py dentro de un directorio indica que dicho directorio debe tratarse como un paquete. En este proyecto, _init_.py tiene la funcion principal de organizar y exponer el servicio WSGI desarrollado por Spyne.

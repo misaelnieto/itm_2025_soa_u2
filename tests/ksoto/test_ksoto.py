@@ -1,9 +1,4 @@
-<<<<<<< HEAD
-"""Modelo de datos que representa un libro en la libreria."""
-import pytest
-=======
 import pytest  # noqa: D100
->>>>>>> b10de79 (cambios necesarios)
 from suds.client import Client as SoapClient
 
 

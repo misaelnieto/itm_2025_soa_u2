@@ -1,0 +1,27 @@
+name: Aseguramiento de la calidad de código
+on: push
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout de código
+        uses: actions/checkout@v4
+      - name: Instalación de UV
+        uses: astral-sh/setup-uv@v5
+      - name: Instalación de dependencias
+        run: uv sync --all-extras --dev
+      - name: Análisis estático de código
+        run: uv run ruff check --output-format=github
+      - name: Ejecutar pruebas
+        run: uv run pytest
+      - name: Reporte de cobertura de código (Orogoro) 
+        uses: orgoro/coverage@v3.2
+        with:
+            coverageFile: coverage.xml
+            token: ${{ secrets.GITHUB_TOKEN }}
+            sourceDir: webservice
+      - name: Reporte de cobertura de código (Jest)
+        uses: ArtiomTr/jest-coverage-report-action@v2
+        with: 
+            coverage-file: coverage.json
+            output: comment, report-markdown

@@ -87,3 +87,6 @@ def test_service_methods(ws):
 
     op = ws.service.agregar("El Silmarillion", "J.R.R. Tolkien", 12345)
     assert op.status == "ERROR"
+
+    op = ws.service.buscar()
+    assert op.status == "ERROR"

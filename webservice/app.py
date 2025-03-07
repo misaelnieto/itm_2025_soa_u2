@@ -106,7 +106,7 @@ def run_wsgi_server(host, port, debug):
 @click.option('--host', '-h', default='127.0.0.1', help='Puerto HTTP', show_default=True)
 @click.option('--port', '-p', default=8080, type=int, help='Puerto HTTP', show_default=True)
 @click.option('--debug', '-d', is_flag=True, help='Activa el modo de depuración')
-def main(host, port, debug):
+def main(host, port, debug):  # pragma: no cover
     """Inicia un servidor WSGI en el host y puerto especificado."""
     formatter = ColoredFormatter(
         "%(log_color)s%(asctime)s - %(name)s - %(levelname)s - %(message)s",

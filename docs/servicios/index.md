@@ -6,3 +6,4 @@ Indice de proyectos
 | Juan Paredes   | `jparedes`  | [Libreria](jparedes.md) |
 | David Ramos   | `dramos`  | [Productos](dramos.md) |
 | Imanol Mayo   | `imayo`  | [Eventos](imayo.md)|
+| 

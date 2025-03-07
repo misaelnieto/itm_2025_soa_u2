@@ -12,6 +12,7 @@ Fixtures:
 import logging
 import socket
 import threading
+import contextlib
 
 import pytest
 
@@ -33,11 +34,10 @@ def _wait_for_tcp_port(host, port, timeout=2):
 
 
 def _free_http_port():
-    """Ask OS for a free TCP port we could use for our tests."""
-    with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
-        s.bind(('', 0))
-        addr = s.getsockname()
-        return addr[1]
+    """Find an unused localhost port from 1024-65535 and return it."""
+    with contextlib.closing(socket.socket(type=socket.SOCK_STREAM)) as sock:
+        sock.bind(("127.0.0.1", 0))
+        return sock.getsockname()[1]
 
 
 @pytest.fixture(scope='module')

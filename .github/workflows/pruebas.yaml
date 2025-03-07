@@ -20,8 +20,3 @@ jobs:
             coverageFile: coverage.xml
             token: ${{ secrets.GITHUB_TOKEN }}
             sourceDir: webservice
-      - name: Reporte de cobertura de código (Jest)
-        uses: ArtiomTr/jest-coverage-report-action@v2
-        with: 
-            coverage-file: coverage.json
-            output: comment, report-markdown

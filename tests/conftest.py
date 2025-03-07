@@ -42,7 +42,7 @@ def _free_http_port():
         return sock.getsockname()[1]
 
 
-@pytest.fixture(scope='module')
+@pytest.fixture(scope='session')
 def wsgi_live_server():
     """_Fixture_ que arranca el servidor WSGI en un hilo usando un puerto aleatorio.
 

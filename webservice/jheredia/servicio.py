@@ -15,7 +15,7 @@ class Ciudad(ComplexModel):
     pais = String
     poblacion = String
 
-# Lista inicial de ciudades
+# Lista inicial de ciudades se puede agregar mas aqui o desde soap ui
 _ciudades = [
     Ciudad(nombre="Mexicali", pais="México", poblacion="1,000,000"),
     Ciudad(nombre="Tijuana", pais="México", poblacion="2,000,000"),

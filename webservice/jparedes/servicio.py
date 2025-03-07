@@ -12,14 +12,14 @@ En una implementacion real, se recomienda utilizar una base de datos para persis
 """
 
 from spyne import (
-    AnyDict,
-    Application,
-    Array,
-    ComplexModel,
-    Integer,
     Service,
-    String,
     srpc,
+    AnyDict,
+    String,
+    ComplexModel,
+    Array,
+    Application,
+    Integer,
 )
 from spyne.protocol.soap import Soap11
 from spyne.server.wsgi import WsgiApplication
@@ -51,10 +51,8 @@ class LibreriaService(Service):
     @srpc(String, Integer, _returns=AnyDict)
     def buscar(titulo, isbn):
         """Busca un libro por titulo o ISBN y retorna el que haga match."""
-        if titulo is None and isbn is None:
-            return {"status": "ERROR", "mensaje": "Debe especificar titulo o ISBN"}
         for libro in libros:
-            if libro.titulo.lower() == titulo.lower() or isbn == libro.ISBN:
+            if libro.titulo.lower() == titulo.lower() or libro.ISBN == isbn:
                 return {
                     "titulo": libro.titulo,
                     "autor": libro.autor,
@@ -63,39 +61,29 @@ class LibreriaService(Service):
                 }
         return {"status": "ERROR", "mensaje": "Libro no encontrado"}
 
-    @srpc(
-        String(min_len=5, nillable=False, min_occurs=1),
-        String(min_len=5, nillable=False),
-        Integer(nillable=False),
-        _returns=AnyDict,
-    )
+    @srpc(String, String, Integer, _returns=AnyDict)
     def agregar(titulo, autor, isbn):
         """Agrega un nuevo libro a la lista."""
         for libro in libros:
-            if isbn == libro.ISBN:
+            if libro.ISBN == isbn:
                 return {"status": "ERROR", "mensaje": "El ISBN ya existe"}
         libros.append(Libro(titulo=titulo, autor=autor, ISBN=isbn))
         return {"titulo": titulo, "autor": autor, "ISBN": isbn, "status": "OK"}
 
-    @srpc(String(nillable=False), Integer(nillable=False), _returns=AnyDict)
+    @srpc(String, Integer, _returns=AnyDict)
     def eliminar(titulo, isbn):
         """Elimina un libro por titulo o ISBN."""
         for i, libro in enumerate(libros):
-            if libro.titulo == titulo or isbn == libro.ISBN:
+            if libro.titulo  == titulo or libro.ISBN == isbn:
                 libros.pop(i)
                 return {"status": "OK", "mensaje": "Libro eliminado"}
         return {"status": "ERROR", "mensaje": "Libro no encontrado"}
 
-    @srpc(
-        Integer(nillable=False),
-        String(nillable=False),
-        String(nillable=False),
-        _returns=AnyDict,
-    )
+    @srpc(Integer, String, String, _returns=AnyDict)
     def actualizar(isbn, nuevo_titulo, nuevo_autor):
         """Modifica los datos de un libro existente mediante su ISBN."""
         for libro in libros:
-            if isbn == libro.ISBN:
+            if libro.ISBN == isbn:
                 libro.titulo = nuevo_titulo
                 libro.autor = nuevo_autor
                 return {"status": "OK", "mensaje": "Libro actualizado"}

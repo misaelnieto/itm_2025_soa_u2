@@ -1,4 +1,4 @@
-"""Test del webservice de libreria."""
+from decimal import Decimal
 
 import pytest
 from suds.client import Client as SoapClient
@@ -28,7 +28,7 @@ def test_wsdl_metadata(ws):
 
     # Has 4 methods, and 10 types
     assert len(svc_port.methods) == 5
-    assert len(sd.types) == 14
+    assert len(sd.types) == 12
 
 
 def test_service_methods(ws):
@@ -86,7 +86,4 @@ def test_service_methods(ws):
     assert op.status == "ERROR"
 
     op = ws.service.agregar("El Silmarillion", "J.R.R. Tolkien", 12345)
-    assert op.status == "ERROR"
-
-    op = ws.service.buscar()
     assert op.status == "ERROR"

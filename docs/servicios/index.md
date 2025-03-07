@@ -11,3 +11,4 @@ Indice de proyectos
 | Diego Dueñas   | `dduenas`  | [Estudiantes](dduenas.md) |
 | Karim Soto   | `ksoto`  | [Peliculas](ksoto.md) |
 | Rodolfo Garcia   | `rgarcia`  | [Recetas](rgarcia.md) |
+| Juan Paredes   | `jparedes`  | [Libreria](jparedes.md) |

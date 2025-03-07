@@ -3,6 +3,7 @@ nav:
   - Inicio: index.md
   - Configuracion de tu entorno: configuracion.md
   - Documentación de servicios web: proyectos/index.md
+
 theme:
   name: material
   locale: es

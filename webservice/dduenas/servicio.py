@@ -1,10 +1,22 @@
+"""Este modulo contiene la etapa 1 del proyecto Estudiantes.
+ 
+Operaciones:
+        `listado`:  Devuelve la lista de estudiantes registrados actualmente.
+        `altaEstudiante`: Agrega un nuevo estudiante a la lista.
+        `eliminarEstudiante`: Elimina un estudiante por su ID.
+        `modificarEstudiante`: Modifica los datos de un estudiante existente en la lista mediante su ID.
+
+En esta etapa, las operaciones para la alta, baja y modificación de información de los alumnos se puede manipular correctamente.
+
+"""
+
 from spyne import AnyDict, Application, Array, ComplexModel, Service, String, srpc
 from spyne.protocol.soap import Soap11
 from spyne.server.wsgi import WsgiApplication
 
 
 class Estudiante(ComplexModel):
-   
+    """Modelo que representa los atributos que poseen los estudiantes."""
     nombre = String
     id = String
     carrera = String
@@ -64,4 +76,3 @@ spyne_app = Application(
 )
 
 wsgi_app = WsgiApplication(spyne_app)
-

@@ -40,7 +40,7 @@ def _free_http_port():
         return addr[1]
 
 
-@pytest.fixture(scope='session')
+@pytest.fixture(scope='module')
 def wsgi_live_server():
     """_Fixture_ que arranca el servidor WSGI en un hilo usando un puerto aleatorio.
 

@@ -6,5 +6,3 @@ Indice de proyectos
 | Elena Palma | `rpalma`  | [Agenda](rpalma.md)|
 | Juan Paredes   | `jparedes`  | [Libreria](jparedes.md) |
 | David Ramos   | `dramos`  | [Productos](dramos.md) |
-
-

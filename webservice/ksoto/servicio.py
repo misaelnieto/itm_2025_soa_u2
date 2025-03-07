@@ -30,11 +30,6 @@ class MoviesServices(Service):
                return movie
            
         return None
-    
-
-    @srpc(_returns=Array(Movie))
-    def getMovies():
-        return MoviesServices.Movies
 
 
     @srpc(String,_returns=String)

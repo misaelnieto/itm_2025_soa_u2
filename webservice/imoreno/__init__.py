@@ -1,5 +1,5 @@
-from . import HotelService
+from .HotelService import wsgi_app
 
 wsgi_apps = {
-    'HotelService/v1': HotelService.wsgi_app,
+	'HotelService/v1': wsgi_app,
 }

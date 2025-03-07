@@ -1,7 +1,10 @@
 """Este módulo implementa el servicio de registro de clientes en un hotel.
 
 - listaClientes: Este método devuelve la lista de clientes registrados en el hotel
-- Este tiene un método que permite registrar un cliente en el hotel.
+- RegistroCliente: Este tiene un método que permite registrar un cliente en el hotel.
+- BuscarCliente: Este método permite buscar un cliente en el hotel.
+- BorrarCliente: Este método permite borrar un cliente del hotel.
+- ModificarCliente: Este método permite modificar la información de un cliente en el hotel.
 """  # noqa: D205
 from spyne import Application, ComplexModel, Integer, Service, Unicode, srpc
 from spyne.protocol.soap import Soap11
@@ -9,10 +12,6 @@ from spyne.server.wsgi import WsgiApplication
 
 _clientes_db = [{'nombre':'Juan', 'ap_primero':'Perez', 'ap_segundo':'Gomez', 'num_habitación':101},
                    {'nombre':'Pedro', 'ap_primero':'Gomez', 'ap_segundo':'Perez', 'num_habitación':102}]
-
-def _listaClientes():
-    return _clientes_db
-
 
 class Cliente(ComplexModel):
     """Modelo que representa una entrada de cliente al hotel."""
@@ -43,10 +42,10 @@ class HotelService(Service):
     @srpc(_returns=ComplexModel)
     def listaClientes():
         """Devuelve el listado de clientes registrados."""
-        return _listaClientes()
+        return _clientes_db
 
     @srpc(Unicode, Unicode, Unicode, Integer, _returns=Resultado)
-    def registroCliente(nombre, ap_primero, ap_segundo, num_habitacion):
+    def RegistroCliente(nombre, ap_primero, ap_segundo, num_habitacion):
         """Realiza un registro de un cliente en el hotel y devuelve el nuevo saldo.
         
         Parametros:
@@ -56,8 +55,9 @@ class HotelService(Service):
         Valor de retorno:
             Un objeto Resultado con el resultado de la operación y el saldo actual.
         """
-        _clientes_db.append(Cliente(nombre=nombre, ap_primero=ap_primero, ap_segundo=ap_segundo, num_habitacion=num_habitacion))
-        return Resultado.ok(_listaClientes())
+        if _clientes_db.append(Cliente(nombre=nombre, ap_primero=ap_primero, ap_segundo=ap_segundo, num_habitacion=num_habitacion)):
+            return Resultado.ok(_clientes_db)
+        return Resultado.error("Error al registrar el cliente")
 
     @srpc(Unicode, Unicode, Unicode, _returns=Resultado)
     def BuscarCliente(nombre, ap_primero, ap_segundo):
@@ -69,7 +69,7 @@ class HotelService(Service):
         - Valor de retorno:
             Un objeto Resultado con el resultado de la operación y la información del cliente.
         """
-        for cliente in _listaClientes():
+        for cliente in _clientes_db:
             if cliente['nombre'] == nombre and cliente['ap_primero'] == ap_primero and cliente['ap_segundo'] == ap_segundo:
                 return Resultado.ok({cliente})
         return Resultado.error("Cliente no encontrado")
@@ -77,19 +77,19 @@ class HotelService(Service):
     @srpc(Unicode, Unicode, Unicode, _returns=Resultado)
     def BorrarCliente(nombre, ap_primero, ap_segundo):
         """Borra un cliente del hotel."""
-        for cliente in _listaClientes():
+        for cliente in _clientes_db:
             if cliente['nombre'] == nombre and cliente['ap_primero'] == ap_primero and cliente['ap_segundo'] == ap_segundo:
                 _clientes_db.remove(cliente)
-                return Resultado.ok(_listaClientes())
+                return Resultado.ok(_clientes_db)
         return Resultado.error("Cliente no encontrado")
     
     @srpc(Unicode, Unicode, Unicode, Integer, _returns=Resultado)
     def ModificarCliente(nombre, ap_primero, ap_segundo, num_habitacion):
         """Modifica la información de un cliente en el hotel."""
-        for cliente in _listaClientes():
+        for cliente in _clientes_db:
             if cliente['nombre'] == nombre and cliente['ap_primero'] == ap_primero and cliente['ap_segundo'] == ap_segundo:
                 cliente['num_habitación'] = num_habitacion
-                return Resultado.ok(_listaClientes())
+                return Resultado.ok(_clientes_db)
         return Resultado.error("Cliente no encontrado")
 
 spyne_app = Application(

@@ -9,3 +9,9 @@ wheels/
 # Virtual environments
 .venv
 .ruff_cache
+
+# Pytest y Coverage
+.coverage
+coverage.*
+htmlcov/
+pytest.xml

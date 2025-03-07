@@ -4,5 +4,4 @@ Indice de proyectos
 | ----------- | -------------- | ---
 | Noe Nieto   | `nnieto`  | Alcancía |
 | David Ramos   | `dramos`  | [Productos](dramos.md) |
-
-
+| Juan Paredes   | `jparedes`  | [Libreria](jparedes.md) |

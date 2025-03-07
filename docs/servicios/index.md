@@ -8,4 +8,6 @@ Indice de proyectos
 | Juan Paredes   | `jparedes`  | [Libreria](jparedes.md) |
 | David Ramos   | `dramos`  | [Productos](dramos.md) |
 | Karim Soto   | `ksoto`  | [Peliculas](ksoto.md) |
-| Noe Nieto   | `dramos`  | [Productos](dramos.md) |
+| David Ramos   | `dramos`  | [Productos](dramos.md) |
+
+

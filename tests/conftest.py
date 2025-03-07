@@ -13,6 +13,7 @@ import logging
 import socket
 import threading
 import contextlib
+import time
 
 import pytest
 
@@ -22,6 +23,7 @@ logger = logging.getLogger(__name__)
 
 
 def _wait_for_tcp_port(host, port, timeout=2):
+    time.sleep(1) # noqa -- Espera un segundo para que el servidor se inicie
     sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)  # presumably
     sock.settimeout(timeout)
     try:
@@ -36,7 +38,7 @@ def _wait_for_tcp_port(host, port, timeout=2):
 def _free_http_port():
     """Find an unused localhost port from 1024-65535 and return it."""
     with contextlib.closing(socket.socket(type=socket.SOCK_STREAM)) as sock:
-        sock.bind(("127.0.0.1", 0))
+        sock.bind(('127.0.0.1', 0))
         return sock.getsockname()[1]
 
 

@@ -10,7 +10,6 @@ Operaciones:
 En esta etapa, las operaciones se realizan sobre una lista en memoria.
 En una implementacion real, se recomienda utilizar una base de datos para persistencia.
 """
-
 from spyne import Application, ComplexModel, Integer, Service, String, srpc
 from spyne.protocol.soap import Soap11
 from spyne.server.wsgi import WsgiApplication

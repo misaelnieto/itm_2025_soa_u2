@@ -1,11 +1,9 @@
-# Peliculas
+#  Peliculas
+
 
 Lo que se hizo en este proyecto fue crear un servicio de peliculas, en donde una persona puede manejar informacion relacionada con peliculas, como agregar peliculas a un catalogo, eliminar peliculas de un catalogo, modificar data relacionada con alguna pelicula en cuestion entre otras cosas. Sin mas que explicar, expliquemos el codigo:
 
 Tenemos el archivo webservice/ksoto/servicio.py, en este archivo tenemos el servicio en si, toda la logica de lo que hara nuestro servicio se encuentra en este archivo. Voy a explicar paso a paso que hace cada cosa:
-
-
-
 
 
 

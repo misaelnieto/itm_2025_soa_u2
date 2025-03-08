@@ -1,5 +1,9 @@
+<<<<<<< HEAD
 """Modelo de datos que representa un libro en la libreria."""
 import pytest
+=======
+import pytest  # noqa: D100
+>>>>>>> b10de79 (cambios necesarios)
 from suds.client import Client as SoapClient
 
 
@@ -33,7 +37,7 @@ def test_wsdl_metadata(ws):
 
 
 def test_service_methods(ws):
-    """Modelo de datos que representa un libro en la libreria."""
+    """Este metodo de python contiene las pruebas necesarias."""
     # Agregar titanic
     ws.service.addMovie('Titanic',1997,'James Cameron')  
 

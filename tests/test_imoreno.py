@@ -34,57 +34,45 @@ def test_wsdl_metadata(ws):
 
 def test_service_methods(ws):
     """Test that our server provides the expected service methods."""
-    # Inicialmente tenemos 2 libros
+    # Inicialmente tenemos 2 clientes
     c = ws.service.listaClientes()
     assert len(c.Cliente) == 2
     assert c.Cliente[0].nombre == 'Juan'
     assert c.Cliente[1].nombre == 'Pedro'
 
-    # Buscamos un libro que existe
-    """op = ws.service.buscar("El señor de los anillos")
-    assert op.titulo == "El señor de los anillos"
-    assert op.autor == "J.R.R. Tolkien"""
+    # Buscamos un cliente que existe
+    op = ws.service.buscar("Juan", "Perez", "Gomez")
+    assert op.nombre == "Juan"
+    assert op.ap_primero == "Perez"
+    assert op.ap_segundo == "Gomez"
+    assert op.num_habitación == 101
 
-    # # Agregamos un libro
-    """ op = ws.service.agregar("El Silmarillion", "J.R.R. Tolkien", 41234)
-    assert op.titulo == "El Silmarillion"
-    assert op.autor == "J.R.R. Tolkien"
-    assert op.status == "OK" """
+    # # Agregamos un cliente
+    op = ws.service.RegistroCliente("Maria", "Moreno", "Lopez", 103)
+    assert op.status == "OK"
 
     # # Verificamos que si se agrego
-    """m = ws.service.listado()
-    assert len(m.Libro) == 3
-    assert m.Libro[0].titulo == "El señor de los anillos"
-    assert m.Libro[1].titulo == "El hobbit"
-    assert m.Libro[2].titulo == "El Silmarillion"""
+    m = ws.service.BuscarCliente("Maria", "Moreno", "Lopez")
+    assert m.nombre == "Maria"
+    assert m.ap_primero == "Moreno"
+    assert m.ap_segundo == "Lopez"
+    assert m.num_habitación == 103
     
-    """# # Eliminamos el libro ya agregado
-    op = ws.service.eliminar(isbn=41234)
-    assert op.status == "OK"""
+    # # Eliminamos el cliente ya agregado
+    op = ws.service.BorrarCliente("Maria", "Moreno", "Lopez")
+    assert op.status == "OK"
 
     # # Verificamos que si se elimino
-    """m = ws.service.listado()
-    assert len(m.Libro) == 2
-    assert m.Libro[0].titulo == "El señor de los anillos"
-    assert m.Libro[1].titulo == "El hobbit"""
+    m = ws.service.BuscarCliente("Maria", "Moreno", "Lopez")
+    assert m.status == "ERROR"
 
-    # # Intentamos buscar un libro ya eliminado y la respuesta del server es de ERROR
-    """op = ws.service.buscar("El Silmarillion")
-    assert op.status == "ERROR"""
-
-    # Actualizamos un libro existente
-    """ op = ws.service.actualizar(12345, "El señor de los anillos 2", "J.R.R. Tolkien")
-    assert op.status == "OK" """
+    # Actualizamos un cliente existente
+    op = ws.service.ModificarCliente("Juan", "Perez", "Gomez", 105)
+    assert op.status == "OK"
 
     # Verificamos que si se actualizo
-    """ op = ws.service.buscar("El señor de los anillos 2")
-    assert op.titulo == "El señor de los anillos 2"
-
-    op = ws.service.actualizar(1231241)
-    assert op.status == "ERROR"
-
-    op = ws.service.eliminar(123124112)
-    assert op.status == "ERROR"
-
-    op = ws.service.agregar("El Silmarillion", "J.R.R. Tolkien", 12345)
-    assert op.status == "ERROR" """
+    m = ws.service.BuscarCliente("Juan", "Perez", "Gomez")
+    assert m.nombre == "Juan"
+    assert m.ap_primero == "Perez"
+    assert m.ap_segundo == "Gomez"
+    assert m.num_habitación == 105

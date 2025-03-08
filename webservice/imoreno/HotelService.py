@@ -10,8 +10,6 @@ from spyne import Application, ComplexModel, Integer, Service, Unicode, srpc
 from spyne.protocol.soap import Soap11
 from spyne.server.wsgi import WsgiApplication
 
-_clientes_db = [{'nombre':'Juan', 'ap_primero':'Perez', 'ap_segundo':'Gomez', 'num_habitación':101},
-                   {'nombre':'Pedro', 'ap_primero':'Gomez', 'ap_segundo':'Perez', 'num_habitación':102}]
 
 class Cliente(ComplexModel):
     """Modelo que representa una entrada de cliente al hotel."""
@@ -19,6 +17,9 @@ class Cliente(ComplexModel):
     ap_primero = Unicode
     ap_segundo = Unicode
     num_habitación = Integer
+
+_clientes_db = [Cliente(nombre='Juan', ap_primero='Perez', ap_segundo='Gomez', num_habitación=101),
+                   Cliente(nombre='Pedro', ap_primero='Gomez', ap_segundo='Perez', num_habitación=102)]
 
 class Resultado(ComplexModel):
     """Representa el resultado de una transacción."""
@@ -70,7 +71,7 @@ class HotelService(Service):
             Un objeto Resultado con el resultado de la operación y la información del cliente.
         """
         for cliente in _clientes_db:
-            if cliente['nombre'] == nombre and cliente['ap_primero'] == ap_primero and cliente['ap_segundo'] == ap_segundo:
+            if cliente.nombre == nombre and cliente.ap_primero == ap_primero and cliente.ap_segundo == ap_segundo:
                 return Resultado.ok({cliente})
         return Resultado.error("Cliente no encontrado")
 
@@ -78,7 +79,7 @@ class HotelService(Service):
     def BorrarCliente(nombre, ap_primero, ap_segundo):
         """Borra un cliente del hotel."""
         for cliente in _clientes_db:
-            if cliente['nombre'] == nombre and cliente['ap_primero'] == ap_primero and cliente['ap_segundo'] == ap_segundo:
+            if cliente.nombre == nombre and cliente.ap_primero == ap_primero and cliente.ap_segundo == ap_segundo:
                 _clientes_db.remove(cliente)
                 return Resultado.ok(_clientes_db)
         return Resultado.error("Cliente no encontrado")
@@ -87,8 +88,8 @@ class HotelService(Service):
     def ModificarCliente(nombre, ap_primero, ap_segundo, num_habitacion):
         """Modifica la información de un cliente en el hotel."""
         for cliente in _clientes_db:
-            if cliente['nombre'] == nombre and cliente['ap_primero'] == ap_primero and cliente['ap_segundo'] == ap_segundo:
-                cliente['num_habitación'] = num_habitacion
+            if cliente.nombre == nombre and cliente.ap_primero == ap_primero and cliente.ap_segundo == ap_segundo:
+                cliente.num_habitacion = num_habitacion
                 return Resultado.ok(_clientes_db)
         return Resultado.error("Cliente no encontrado")
 

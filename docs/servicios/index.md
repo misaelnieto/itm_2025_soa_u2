@@ -3,6 +3,7 @@ Indice de proyectos
 | Nombre | Módulo | Documentación de servicio web                        |
 | ----------- | -------------- | ---
 | Noe Nieto   | `nnieto`  | Alcancía |
+| Jesús Chaidez | `jchaidez` | [Cursos](jchaidez.md) |
 | Adrian Santelis   | `asantelis`  | [Animales](asantelis.md) |
 | Elena Palma | `rpalma`  | [Agenda](rpalma.md)|
 | Juan Paredes   | `jparedes`  | [Libreria](jparedes.md) |

@@ -27,5 +27,8 @@
     },
     "python.analysis.inlayHints.pytestParameters": true,
     "python.testing.pytestEnabled": true,
-    "python.testing.pytestPath": "uv run pytest"
+    "python.testing.pytestPath": "uv run pytest",
+    "files.associations": {
+        "plyconfig.json": "jsonc"
+    }
 }

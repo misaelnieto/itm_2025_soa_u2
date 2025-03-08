@@ -76,4 +76,3 @@ spyne_app = Application(
 )
 
 wsgi_app = WsgiApplication(spyne_app)
-

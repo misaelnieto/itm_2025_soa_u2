@@ -1,3 +1,4 @@
+"""Modelo de datos que representa un libro en la libreria."""
 import pytest
 from suds.client import Client as SoapClient
 
@@ -32,7 +33,7 @@ def test_wsdl_metadata(ws):
 
 
 def test_service_methods(ws):
-
+    """Modelo de datos que representa un libro en la libreria."""
     # Agregar titanic
     ws.service.addMovie('Titanic',1997,'James Cameron')  
 
@@ -44,7 +45,7 @@ def test_service_methods(ws):
 
     # Comprobar si cuando buscamos una pelicula que no existe, efectivamente nos retorna None
     response = ws.service.getMovie('Seitokai Yakuindomo')
-    assert response == None   
+    assert response is None   
     
 
 

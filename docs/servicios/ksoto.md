@@ -1,3 +1,5 @@
+# Peliculas
+
 Lo que se hizo en este proyecto fue crear un servicio de peliculas, en donde una persona puede manejar informacion relacionada con peliculas, como agregar peliculas a un catalogo, eliminar peliculas de un catalogo, modificar data relacionada con alguna pelicula en cuestion entre otras cosas. Sin mas que explicar, expliquemos el codigo:
 
 Tenemos el archivo webservice/ksoto/servicio.py, en este archivo tenemos el servicio en si, toda la logica de lo que hara nuestro servicio se encuentra en este archivo. Voy a explicar paso a paso que hace cada cosa:
@@ -180,3 +182,7 @@ Ahora explicare lo que tenemos en el archivo _init_.py
 
 
 En python, un archivo llamado _init_.py dentro de un directorio indica que dicho directorio debe tratarse como un paquete. En este proyecto, _init_.py tiene la funcion principal de organizar y exponer el servicio WSGI desarrollado por Spyne.
+
+## Documentacion del modulo automatica
+
+::: webservice.ksoto.servicio

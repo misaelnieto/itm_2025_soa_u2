@@ -37,7 +37,7 @@ def test_wsdl_metadata(ws):
 
 
 def test_service_methods(ws):
-    """Este metodo de python contiene las pruebas necesarias."""
+    """Este metodo de python contiene las pruebas requeridas."""
     # Agregar titanic
     ws.service.addMovie('Titanic',1997,'James Cameron')  
 

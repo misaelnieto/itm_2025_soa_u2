@@ -1,0 +1,1316 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentación de la Unidad 2 de la materia de Arquitectura Orientada a Servicios">
+      
+      
+        <meta name="author" content="Noe Nieto">
+      
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.5">
+    
+    
+      
+        <title>Peliculas - Arquitectura Orientada a Servicios</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.8608ea7d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Serif:300,300i,400,400i,700,700i%7CUbuntu+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Noto Serif";--md-code-font:"Ubuntu Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/_mkdocstrings.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#peliculas" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../.." title="Arquitectura Orientada a Servicios" class="md-header__button md-logo" aria-label="Arquitectura Orientada a Servicios" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.5 11H19V7a2 2 0 0 0-2-2h-4V3.5A2.5 2.5 0 0 0 10.5 1 2.5 2.5 0 0 0 8 3.5V5H4a2 2 0 0 0-2 2v3.8h1.5c1.5 0 2.7 1.2 2.7 2.7S5 16.2 3.5 16.2H2V20a2 2 0 0 0 2 2h3.8v-1.5c0-1.5 1.2-2.7 2.7-2.7s2.7 1.2 2.7 2.7V22H17a2 2 0 0 0 2-2v-4h1.5a2.5 2.5 0 0 0 2.5-2.5 2.5 2.5 0 0 0-2.5-2.5"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Arquitectura Orientada a Servicios
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Peliculas
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/misaelnieto/itm_2025_soa_u2/" title="Ir al repositorio" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Pestañas" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../tutorial/" class="md-tabs__link">
+          
+  
+  Tutorial
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../herramientas/webservice/" class="md-tabs__link">
+          
+  
+  Herramientas
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../" class="md-tabs__link">
+        
+  
+    
+  
+  Proyectos
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Arquitectura Orientada a Servicios" class="md-nav__button md-logo" aria-label="Arquitectura Orientada a Servicios" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.5 11H19V7a2 2 0 0 0-2-2h-4V3.5A2.5 2.5 0 0 0 10.5 1 2.5 2.5 0 0 0 8 3.5V5H4a2 2 0 0 0-2 2v3.8h1.5c1.5 0 2.7 1.2 2.7 2.7S5 16.2 3.5 16.2H2V20a2 2 0 0 0 2 2h3.8v-1.5c0-1.5 1.2-2.7 2.7-2.7s2.7 1.2 2.7 2.7V22H17a2 2 0 0 0 2-2v-4h1.5a2.5 2.5 0 0 0 2.5-2.5 2.5 2.5 0 0 0-2.5-2.5"/></svg>
+
+    </a>
+    Arquitectura Orientada a Servicios
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/misaelnieto/itm_2025_soa_u2/" title="Ir al repositorio" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Tutorial
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            Tutorial
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introducción
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial/winget/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Paso 1 - Winget
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial/git/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Paso 2 - Git
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial/repositorio/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Paso 3 - Repositorio
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial/uv/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Paso 4 - UV
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial/implementacion/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Paso 5 - Implementación
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial/pytest/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Paso 6 - Pruebas de integración
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial/ruff/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Paso 7 - Analisis estatico
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial/mkdocs.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Paso 8 - Documentación
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial/pr.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Paso 9 - Pull Request
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Herramientas
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Herramientas
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../herramientas/webservice/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    webservice
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Proyectos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="peliculas">Peliculas<a class="headerlink" href="#peliculas" title="Permanent link">#</a></h1>
+<p>Lo que se hizo en este proyecto fue crear un servicio de peliculas, en donde una persona puede manejar informacion relacionada con peliculas, como agregar peliculas a un catalogo, eliminar peliculas de un catalogo, modificar data relacionada con alguna pelicula en cuestion entre otras cosas. Sin mas que explicar, expliquemos el codigo:</p>
+<p>Tenemos el archivo webservice/ksoto/servicio.py, en este archivo tenemos el servicio en si, toda la logica de lo que hara nuestro servicio se encuentra en este archivo. Voy a explicar paso a paso que hace cada cosa:</p>
+<p>Aqui solo estamos haciendo las importaciones que vamos a utlizar en nuestro codigo, como podemos ver, todo viene de la libreria spyne.</p>
+<pre><code>from spyne import Service, ComplexModel, String, Integer, srpc, Application, Array
+from spyne.protocol.soap import Soap11
+from spyne.server.wsgi import WsgiApplication
+</code></pre>
+<p>Esta es la clase Movie, basicamente es por decirlo un nodo, en donde guardaremos la informacion correspondiente de cada pelicula, en spyne, necesitamos definir el tipo de dato que es cada variable, algo que en python no es normal, pero que en otros lenguajes de programacion si lo es.</p>
+<pre><code>    class Movie(ComplexModel):
+        name = String
+        release = Integer
+        director = String
+</code></pre>
+<p>Luego tenemos la clase principal, en esta clase es donde vamos a manejar toda la logica de nuestro servicio, dentro de esta clase tenemos todas las funciones mencionadas al principio de la documentacion. Podemos notar que la clase recibe como argumento Service, esto es significa que es un servicio de SOAP. Tambien podemos notar que tenemos un arreglo, dentro de este arreglo, vamos a almacenar las peliculas.</p>
+<pre><code>class MoviesServices(Service):
+
+    Movies = []
+</code></pre>
+<p>Cuando trabajamos con spyne, todas las funciones deben tener un decorador, en ellos, debemos de poner los tipos de datos que recibe, es decir, el tipo de dato de cada argumento que recibe, como el tipo de dato que retorna. En este caso, la variable name se espera que sea de tipo string, la variable release, se espera que se de tipo Integer. Como podemos ver en la funcion, al final nos retorna un mensaje de exito, es decir, un string, por lo que en el decorador debemos especificar que tipo de dato retorna, es decir, un string.</p>
+<p>El metodo addMovie recibe toda la DATA relacionada con una pelicula, a partir de esa DATA, crea una instancia, y dicha instancia la agrega a la lista Movies. Por ultimo retorna un mensaje de exito</p>
+<pre><code>    @srpc(String,Integer,String,_returns=String)
+    def addMovie(name,release,director):
+
+        # Crear la instancia
+        movie = Movie(name=name,release=release,director=director)
+        MoviesServices.Movies.append(movie)
+
+        return "Pelicula agrega correctamente"
+</code></pre>
+<p>Este metodo lo unico que hace es recibir un nombre, entonces a traves de un for, busca en la lista alguna pelicula que concorde con el nombre, si no encuentra ninguna coincidencia, entonces significa que la pelicula que esta buscando el usuario no existe, si encuentra una coincidencia, entonces retorna toda la pelicula, es decir, un dato de tipo Movie.</p>
+<pre><code>    @srpc(String,_returns=Movie)
+    def getMovie(name):
+
+        for movie in MoviesServices.Movies:
+            if movie.name == name:
+                return movie
+
+        return None
+</code></pre>
+<p>Este metodo solo retorna la lista completa de todas las peliculas.</p>
+<pre><code>    @srpc(_returns=Array(Movie))
+    def getMovies():
+        return MoviesServices.Movies
+</code></pre>
+<p>Este metodo lo que hace es que pide un nombre, busca una coincidencia, es decir, una pelicula que tenga el mismo nombre, si la encuentra, entonces procede a eliminar la pelicula en si, es decir, no borra simplemente el nombre, la fecha en la que salio, el nombre del director, sino toda la pelicula en si, por lo que en la lista, ya no aparece mas dicha pelicula. Utiliza un bucle for para iterar sobre la lista, ademas de que se usa una variable para verificar si la eliminacion fue exitosa o no.</p>
+<pre><code>    @srpc(String,_returns=String)
+    def deleteMovie(name):
+
+        deleted = 0
+
+        for movie in MoviesServices.Movies:
+        if movie.name == name:
+            MoviesServices.Movies.remove(movie)
+            deleted = 1
+
+        if deleted == 0:
+            return f"No existe la pelicula {name}, por lo que no se hizo ninguna eliminacion"
+        else:
+            return "La pelicula se elimino con exito"
+</code></pre>
+<p>Este metodo, al igual que el metodo de eliminacion, utiliza un ciclo for para iterar sobra cada pelicula, si encuentra la pelicula que el cliente (otro programa) quiere, entonces procede a cambiar el nombre, ya que este metodo solo modifica el nombre, es decir, si una pelicula se llamaba mi pobre angelito, ahora esa pelicula se puede llamar Seitokai Yakuindomo</p>
+<pre><code>    @srpc(String, String, _returns=String)
+    def changeName(old_name,new_name):
+        for movie in MoviesServices.Movies:
+        if movie.name == old_name:
+            movie.name = new_name
+            return f"El nombre de la pelicula {old_name} fue modificado a {new_name}"
+
+        return "No existe la pelicula que quieres modificar"
+</code></pre>
+<p>Este metodo hace lo mismo que changeName, solo que este cambie la fecha de lanzamiento de dicha pelicula, pero es la fecha de lanzamiento en Estados Unidos. Bueno eso tambien dependera del cliente.</p>
+<pre><code>    @srpc(String, Integer, _returns=String)
+    def changeRelease(name,new_release):
+        for movie in MoviesServices.Movies:
+        if movie.name == name:
+            movie.release = new_release
+            return f"El año de lanzamiento de la pelicula {name} fue modificado a {new_release}"
+
+        return "No existe la pelicula que quieres modificar"
+</code></pre>
+<p>Este metodo hace lo mismo que los otros dos metodos anteriores, solo que este cambie el nombre del director de una pelicula, esto es debido a que en ocasiones, uno puede equivocarse con respecto al nombre del director, por ejemplo, yo pensaba que la pelicula "THE EMPIRE STRIKES BACK", la segunda pelicula de STAR WARS, fue dirigida por George Lucas, y aunque el encargado de la pelicula si fue George Lucas, el papel de director fue otra persona.</p>
+<pre><code>    @srpc(String, String, _returns=String)
+    def changeDirector(name,new_director):
+        for movie in MoviesServices.Movies:
+        if movie.name == name:
+            movie.director = new_director
+            return f"El director de la pelicula {name} fue modificado a {new_director}"
+
+        return "No existe la pelicula que quieres modificar"
+</code></pre>
+<p>Por ultimo, tenemos que crear la configuracion de spyne, es decir, para la comunicacion con el cliente-servidor, spyne nos dice que dicha documentacion la tenemos que guardar en una variable spyne_app, dentro, tenemos que poner que servicios queremos, en este caso, tenemos que poner el servicio (El nombre de la clase que creamos) que queremos, el tns, que en mi caso, le puse 'com.ksoto.movies'. Basicamente esto no afecta en tal a la logica de nuestro servicio, es la pura configuracion, pero si no ponemos esto, de nada nos servira que tengamos el mejor servicio del planeta tierra, si nadie se puede conectarse a ella.</p>
+<p>spyne_app = Application(
+    services=[MoviesServices],
+    tns='com.ksoto.movies',   # &lt;-- todos los XML que vamos a recibir, van a tener el name space: com.ksoto.movies                                        <br />
+    name='Movies',
+    in_protocol=Soap11(validator='lxml'),
+    out_protocol=Soap11(validator='lxml')
+)</p>
+<p>wsgi_app = WsgiApplication(spyne_app)</p>
+<hr />
+<p>Ahora explicare lo que tenemos en el archivo <em>init</em>.py</p>
+<pre><code>    from .servicio import wsgi_app
+
+    wsgi_apps = {
+        'ksoto/movies': wsgi_app,
+    }
+</code></pre>
+<p>En python, un archivo llamado <em>init</em>.py dentro de un directorio indica que dicho directorio debe tratarse como un paquete. En este proyecto, <em>init</em>.py tiene la funcion principal de organizar y exponer el servicio WSGI desarrollado por Spyne.</p>
+<h2 id="documentacion-del-modulo-automatica">Documentacion del modulo automatica<a class="headerlink" href="#documentacion-del-modulo-automatica" title="Permanent link">#</a></h2>
+
+
+<div class="doc doc-object doc-module">
+
+
+
+<a id="webservice.ksoto.servicio"></a>
+    <div class="doc doc-contents first">
+
+        <p>Este módulo contiene el CRUD de nuestro webservice Peliculas.</p>
+<p>Operaciones:</p>
+<pre><code>- agregar pelicula:   Este servicio puede agregar una pelicula, si el cliente asi lo desea.
+- eliminar pelicula:  Este servicio se encarga de eliminar una pelicula segun el usuario lo necesite.
+- modificar pelicula: El servicio implemnta varios metodos que permiten modificar algun dato correspondiente de una pelicula, la razon por la que esta funcionalidad se implemento en varios metodos, fue para implementar una capa de restriccion, si obligamos al usario a que solo debe pasar los paramtros correspondientes a un dato para modificarlo, habra menos errores en la implementacion de dicho servicio.
+- obtener pelicula:   El usuario puede solicitar en su XML la informacion completa de una pelicula en particular, o de todas las peliculas.
+</code></pre>
+<p>En esta etapa, las operaciones se realizan sobre una lista en memoria.
+En una implementacion real, se recomienda utilizar una base de datos para persistencia.</p>
+
+
+
+
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="webservice.ksoto.servicio.Movie" class="doc doc-heading">
+            <code>Movie</code>
+
+
+<a href="#webservice.ksoto.servicio.Movie" class="headerlink" title="Permanent link">#</a></h2>
+
+
+    <div class="doc doc-contents ">
+            <p class="doc doc-class-bases">
+              Bases: <code><span title="spyne.ComplexModel">ComplexModel</span></code></p>
+
+
+        <p>Modelo de datos que representa una pelicula en una plataforma de streaming.</p>
+
+
+
+
+
+
+              <details class="quote">
+                <summary>Source code in <code>webservice/ksoto/servicio.py</code></summary>
+                <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">Movie</span><span class="p">(</span><span class="n">ComplexModel</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Modelo de datos que representa una pelicula en una plataforma de streaming.&quot;&quot;&quot;</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">String</span>
+    <span class="n">release</span> <span class="o">=</span> <span class="n">Integer</span>
+    <span class="n">director</span> <span class="o">=</span> <span class="n">String</span>
+</code></pre></div></td></tr></table></div>
+              </details>
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="webservice.ksoto.servicio.MoviesServices" class="doc doc-heading">
+            <code>MoviesServices</code>
+
+
+<a href="#webservice.ksoto.servicio.MoviesServices" class="headerlink" title="Permanent link">#</a></h2>
+
+
+    <div class="doc doc-contents ">
+            <p class="doc doc-class-bases">
+              Bases: <code><span title="spyne.Service">Service</span></code></p>
+
+
+        <p>Servicio con el cual, podemos tener las operaciones mencionadas al inicio.</p>
+
+
+
+
+
+
+              <details class="quote">
+                <summary>Source code in <code>webservice/ksoto/servicio.py</code></summary>
+                <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span>
+<span class="normal">57</span>
+<span class="normal">58</span>
+<span class="normal">59</span>
+<span class="normal">60</span>
+<span class="normal">61</span>
+<span class="normal">62</span>
+<span class="normal">63</span>
+<span class="normal">64</span>
+<span class="normal">65</span>
+<span class="normal">66</span>
+<span class="normal">67</span>
+<span class="normal">68</span>
+<span class="normal">69</span>
+<span class="normal">70</span>
+<span class="normal">71</span>
+<span class="normal">72</span>
+<span class="normal">73</span>
+<span class="normal">74</span>
+<span class="normal">75</span>
+<span class="normal">76</span>
+<span class="normal">77</span>
+<span class="normal">78</span>
+<span class="normal">79</span>
+<span class="normal">80</span>
+<span class="normal">81</span>
+<span class="normal">82</span>
+<span class="normal">83</span>
+<span class="normal">84</span>
+<span class="normal">85</span>
+<span class="normal">86</span>
+<span class="normal">87</span>
+<span class="normal">88</span>
+<span class="normal">89</span>
+<span class="normal">90</span>
+<span class="normal">91</span>
+<span class="normal">92</span>
+<span class="normal">93</span>
+<span class="normal">94</span>
+<span class="normal">95</span>
+<span class="normal">96</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">MoviesServices</span><span class="p">(</span><span class="n">Service</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Servicio con el cual, podemos tener las operaciones mencionadas al inicio.&quot;&quot;&quot;</span>
+
+    <span class="n">Movies</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="nd">@srpc</span><span class="p">(</span><span class="n">String</span><span class="p">,</span><span class="n">Integer</span><span class="p">,</span><span class="n">String</span><span class="p">,</span><span class="n">_returns</span><span class="o">=</span><span class="n">String</span><span class="p">)</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">addMovie</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="n">release</span><span class="p">,</span><span class="n">director</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Este metodo de python permite agregar una pelicula a la lista de la clase.&quot;&quot;&quot;</span>
+        <span class="c1"># Crear la instancia</span>
+        <span class="n">movie</span> <span class="o">=</span> <span class="n">Movie</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span><span class="n">release</span><span class="o">=</span><span class="n">release</span><span class="p">,</span><span class="n">director</span><span class="o">=</span><span class="n">director</span><span class="p">)</span>
+        <span class="n">MoviesServices</span><span class="o">.</span><span class="n">Movies</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">movie</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="s2">&quot;Pelicula agrega correctamente&quot;</span>
+
+
+    <span class="nd">@srpc</span><span class="p">(</span><span class="n">String</span><span class="p">,</span><span class="n">_returns</span><span class="o">=</span><span class="n">Movie</span><span class="p">)</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getMovie</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Este metodo de python itera sobre el arreglo de clase que tenemos, una vez que encuentre una pelicula con el nombre que el usuario le pase como argumento, nos va a devolver toda la pelicula, es decir, el objeto Movie que contiene todos los datos de dicha pelicula.&quot;&quot;&quot;</span>
+        <span class="k">for</span> <span class="n">movie</span> <span class="ow">in</span> <span class="n">MoviesServices</span><span class="o">.</span><span class="n">Movies</span><span class="p">:</span>
+           <span class="k">if</span> <span class="n">movie</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="n">name</span><span class="p">:</span>
+               <span class="k">return</span> <span class="n">movie</span>
+
+        <span class="k">return</span> <span class="kc">None</span>
+
+
+    <span class="nd">@srpc</span><span class="p">(</span><span class="n">String</span><span class="p">,</span><span class="n">_returns</span><span class="o">=</span><span class="n">String</span><span class="p">)</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">deleteMovie</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Este metodo itera sobre la lista, una vez que encuentra la pelicula a la que el cliente hace referencia, la elimina, de lo contrario, retorna un mensaje, el cual estara dentro de un XML que se enviara como respuesta al cliente, avisandole que la pelicula que el cliente intento eliminar no existe.&quot;&quot;&quot;</span>
+        <span class="n">deleted</span> <span class="o">=</span> <span class="mi">0</span>
+
+        <span class="k">for</span> <span class="n">movie</span> <span class="ow">in</span> <span class="n">MoviesServices</span><span class="o">.</span><span class="n">Movies</span><span class="p">:</span>
+           <span class="k">if</span> <span class="n">movie</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="n">name</span><span class="p">:</span>
+               <span class="n">MoviesServices</span><span class="o">.</span><span class="n">Movies</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">movie</span><span class="p">)</span>
+               <span class="n">deleted</span> <span class="o">=</span> <span class="mi">1</span>
+
+        <span class="k">if</span> <span class="n">deleted</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;No existe la pelicula </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">, por lo que no se hizo ninguna eliminacion&quot;</span>
+
+        <span class="k">return</span> <span class="s2">&quot;La pelicula se elimino con exito&quot;</span>
+
+
+    <span class="nd">@srpc</span><span class="p">(</span><span class="n">String</span><span class="p">,</span> <span class="n">String</span><span class="p">,</span> <span class="n">_returns</span><span class="o">=</span><span class="n">String</span><span class="p">)</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">changeName</span><span class="p">(</span><span class="n">old_name</span><span class="p">,</span><span class="n">new_name</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Metodo de python para cambiar el nombre, itera sobre todas las peliculas, encuentra la pelicula en cuestion, y cambia el nombre anterior por uno nuevo.&quot;&quot;&quot;</span>
+        <span class="k">for</span> <span class="n">movie</span> <span class="ow">in</span> <span class="n">MoviesServices</span><span class="o">.</span><span class="n">Movies</span><span class="p">:</span>
+           <span class="k">if</span> <span class="n">movie</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="n">old_name</span><span class="p">:</span>
+               <span class="n">movie</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">new_name</span>
+               <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;El nombre de la pelicula </span><span class="si">{</span><span class="n">old_name</span><span class="si">}</span><span class="s2"> fue modificado a </span><span class="si">{</span><span class="n">new_name</span><span class="si">}</span><span class="s2">&quot;</span>
+
+        <span class="k">return</span> <span class="s2">&quot;No existe la pelicula que quieres modificar&quot;</span>
+
+
+    <span class="nd">@srpc</span><span class="p">(</span><span class="n">String</span><span class="p">,</span> <span class="n">Integer</span><span class="p">,</span> <span class="n">_returns</span><span class="o">=</span><span class="n">String</span><span class="p">)</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">changeRelease</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="n">new_release</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Similar al metodo anterior, solo que este modifica la fecha de lanzamiento de la pelicula en cuestion.&quot;&quot;&quot;</span>
+        <span class="k">for</span> <span class="n">movie</span> <span class="ow">in</span> <span class="n">MoviesServices</span><span class="o">.</span><span class="n">Movies</span><span class="p">:</span>
+           <span class="k">if</span> <span class="n">movie</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="n">name</span><span class="p">:</span>
+               <span class="n">movie</span><span class="o">.</span><span class="n">release</span> <span class="o">=</span> <span class="n">new_release</span>
+               <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;El año de lanzamiento de la pelicula </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2"> fue modificado a </span><span class="si">{</span><span class="n">new_release</span><span class="si">}</span><span class="s2">&quot;</span>
+
+        <span class="k">return</span> <span class="s2">&quot;No existe la pelicula que quieres modificar&quot;</span>
+
+    <span class="nd">@srpc</span><span class="p">(</span><span class="n">String</span><span class="p">,</span> <span class="n">String</span><span class="p">,</span> <span class="n">_returns</span><span class="o">=</span><span class="n">String</span><span class="p">)</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">changeDirector</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="n">new_director</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Similar al metodo anterior, solo que este modifica el nombre del director de la pelicula en cuestion.&quot;&quot;&quot;</span>
+        <span class="k">for</span> <span class="n">movie</span> <span class="ow">in</span> <span class="n">MoviesServices</span><span class="o">.</span><span class="n">Movies</span><span class="p">:</span>
+           <span class="k">if</span> <span class="n">movie</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="n">name</span><span class="p">:</span>
+               <span class="n">movie</span><span class="o">.</span><span class="n">director</span> <span class="o">=</span> <span class="n">new_director</span>
+               <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;El director de la pelicula </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2"> fue modificado a </span><span class="si">{</span><span class="n">new_director</span><span class="si">}</span><span class="s2">&quot;</span>
+
+        <span class="k">return</span> <span class="s2">&quot;No existe la pelicula que quieres modificar&quot;</span>
+</code></pre></div></td></tr></table></div>
+              </details>
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="webservice.ksoto.servicio.MoviesServices.addMovie" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">addMovie</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">release</span><span class="p">,</span> <span class="n">director</span><span class="p">)</span></code>
+
+<a href="#webservice.ksoto.servicio.MoviesServices.addMovie" class="headerlink" title="Permanent link">#</a></h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Este metodo de python permite agregar una pelicula a la lista de la clase.</p>
+
+            <details class="quote">
+              <summary>Source code in <code>webservice/ksoto/servicio.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@srpc</span><span class="p">(</span><span class="n">String</span><span class="p">,</span><span class="n">Integer</span><span class="p">,</span><span class="n">String</span><span class="p">,</span><span class="n">_returns</span><span class="o">=</span><span class="n">String</span><span class="p">)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">addMovie</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="n">release</span><span class="p">,</span><span class="n">director</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Este metodo de python permite agregar una pelicula a la lista de la clase.&quot;&quot;&quot;</span>
+    <span class="c1"># Crear la instancia</span>
+    <span class="n">movie</span> <span class="o">=</span> <span class="n">Movie</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span><span class="n">release</span><span class="o">=</span><span class="n">release</span><span class="p">,</span><span class="n">director</span><span class="o">=</span><span class="n">director</span><span class="p">)</span>
+    <span class="n">MoviesServices</span><span class="o">.</span><span class="n">Movies</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">movie</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="s2">&quot;Pelicula agrega correctamente&quot;</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="webservice.ksoto.servicio.MoviesServices.changeDirector" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">changeDirector</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">new_director</span><span class="p">)</span></code>
+
+<a href="#webservice.ksoto.servicio.MoviesServices.changeDirector" class="headerlink" title="Permanent link">#</a></h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Similar al metodo anterior, solo que este modifica el nombre del director de la pelicula en cuestion.</p>
+
+            <details class="quote">
+              <summary>Source code in <code>webservice/ksoto/servicio.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">88</span>
+<span class="normal">89</span>
+<span class="normal">90</span>
+<span class="normal">91</span>
+<span class="normal">92</span>
+<span class="normal">93</span>
+<span class="normal">94</span>
+<span class="normal">95</span>
+<span class="normal">96</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@srpc</span><span class="p">(</span><span class="n">String</span><span class="p">,</span> <span class="n">String</span><span class="p">,</span> <span class="n">_returns</span><span class="o">=</span><span class="n">String</span><span class="p">)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">changeDirector</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="n">new_director</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Similar al metodo anterior, solo que este modifica el nombre del director de la pelicula en cuestion.&quot;&quot;&quot;</span>
+    <span class="k">for</span> <span class="n">movie</span> <span class="ow">in</span> <span class="n">MoviesServices</span><span class="o">.</span><span class="n">Movies</span><span class="p">:</span>
+       <span class="k">if</span> <span class="n">movie</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="n">name</span><span class="p">:</span>
+           <span class="n">movie</span><span class="o">.</span><span class="n">director</span> <span class="o">=</span> <span class="n">new_director</span>
+           <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;El director de la pelicula </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2"> fue modificado a </span><span class="si">{</span><span class="n">new_director</span><span class="si">}</span><span class="s2">&quot;</span>
+
+    <span class="k">return</span> <span class="s2">&quot;No existe la pelicula que quieres modificar&quot;</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="webservice.ksoto.servicio.MoviesServices.changeName" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">changeName</span><span class="p">(</span><span class="n">old_name</span><span class="p">,</span> <span class="n">new_name</span><span class="p">)</span></code>
+
+<a href="#webservice.ksoto.servicio.MoviesServices.changeName" class="headerlink" title="Permanent link">#</a></h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Metodo de python para cambiar el nombre, itera sobre todas las peliculas, encuentra la pelicula en cuestion, y cambia el nombre anterior por uno nuevo.</p>
+
+            <details class="quote">
+              <summary>Source code in <code>webservice/ksoto/servicio.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">67</span>
+<span class="normal">68</span>
+<span class="normal">69</span>
+<span class="normal">70</span>
+<span class="normal">71</span>
+<span class="normal">72</span>
+<span class="normal">73</span>
+<span class="normal">74</span>
+<span class="normal">75</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@srpc</span><span class="p">(</span><span class="n">String</span><span class="p">,</span> <span class="n">String</span><span class="p">,</span> <span class="n">_returns</span><span class="o">=</span><span class="n">String</span><span class="p">)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">changeName</span><span class="p">(</span><span class="n">old_name</span><span class="p">,</span><span class="n">new_name</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Metodo de python para cambiar el nombre, itera sobre todas las peliculas, encuentra la pelicula en cuestion, y cambia el nombre anterior por uno nuevo.&quot;&quot;&quot;</span>
+    <span class="k">for</span> <span class="n">movie</span> <span class="ow">in</span> <span class="n">MoviesServices</span><span class="o">.</span><span class="n">Movies</span><span class="p">:</span>
+       <span class="k">if</span> <span class="n">movie</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="n">old_name</span><span class="p">:</span>
+           <span class="n">movie</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">new_name</span>
+           <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;El nombre de la pelicula </span><span class="si">{</span><span class="n">old_name</span><span class="si">}</span><span class="s2"> fue modificado a </span><span class="si">{</span><span class="n">new_name</span><span class="si">}</span><span class="s2">&quot;</span>
+
+    <span class="k">return</span> <span class="s2">&quot;No existe la pelicula que quieres modificar&quot;</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="webservice.ksoto.servicio.MoviesServices.changeRelease" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">changeRelease</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">new_release</span><span class="p">)</span></code>
+
+<a href="#webservice.ksoto.servicio.MoviesServices.changeRelease" class="headerlink" title="Permanent link">#</a></h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Similar al metodo anterior, solo que este modifica la fecha de lanzamiento de la pelicula en cuestion.</p>
+
+            <details class="quote">
+              <summary>Source code in <code>webservice/ksoto/servicio.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">78</span>
+<span class="normal">79</span>
+<span class="normal">80</span>
+<span class="normal">81</span>
+<span class="normal">82</span>
+<span class="normal">83</span>
+<span class="normal">84</span>
+<span class="normal">85</span>
+<span class="normal">86</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@srpc</span><span class="p">(</span><span class="n">String</span><span class="p">,</span> <span class="n">Integer</span><span class="p">,</span> <span class="n">_returns</span><span class="o">=</span><span class="n">String</span><span class="p">)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">changeRelease</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="n">new_release</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Similar al metodo anterior, solo que este modifica la fecha de lanzamiento de la pelicula en cuestion.&quot;&quot;&quot;</span>
+    <span class="k">for</span> <span class="n">movie</span> <span class="ow">in</span> <span class="n">MoviesServices</span><span class="o">.</span><span class="n">Movies</span><span class="p">:</span>
+       <span class="k">if</span> <span class="n">movie</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="n">name</span><span class="p">:</span>
+           <span class="n">movie</span><span class="o">.</span><span class="n">release</span> <span class="o">=</span> <span class="n">new_release</span>
+           <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;El año de lanzamiento de la pelicula </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2"> fue modificado a </span><span class="si">{</span><span class="n">new_release</span><span class="si">}</span><span class="s2">&quot;</span>
+
+    <span class="k">return</span> <span class="s2">&quot;No existe la pelicula que quieres modificar&quot;</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="webservice.ksoto.servicio.MoviesServices.deleteMovie" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">deleteMovie</span><span class="p">(</span><span class="n">name</span><span class="p">)</span></code>
+
+<a href="#webservice.ksoto.servicio.MoviesServices.deleteMovie" class="headerlink" title="Permanent link">#</a></h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Este metodo itera sobre la lista, una vez que encuentra la pelicula a la que el cliente hace referencia, la elimina, de lo contrario, retorna un mensaje, el cual estara dentro de un XML que se enviara como respuesta al cliente, avisandole que la pelicula que el cliente intento eliminar no existe.</p>
+
+            <details class="quote">
+              <summary>Source code in <code>webservice/ksoto/servicio.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span>
+<span class="normal">57</span>
+<span class="normal">58</span>
+<span class="normal">59</span>
+<span class="normal">60</span>
+<span class="normal">61</span>
+<span class="normal">62</span>
+<span class="normal">63</span>
+<span class="normal">64</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@srpc</span><span class="p">(</span><span class="n">String</span><span class="p">,</span><span class="n">_returns</span><span class="o">=</span><span class="n">String</span><span class="p">)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">deleteMovie</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Este metodo itera sobre la lista, una vez que encuentra la pelicula a la que el cliente hace referencia, la elimina, de lo contrario, retorna un mensaje, el cual estara dentro de un XML que se enviara como respuesta al cliente, avisandole que la pelicula que el cliente intento eliminar no existe.&quot;&quot;&quot;</span>
+    <span class="n">deleted</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="k">for</span> <span class="n">movie</span> <span class="ow">in</span> <span class="n">MoviesServices</span><span class="o">.</span><span class="n">Movies</span><span class="p">:</span>
+       <span class="k">if</span> <span class="n">movie</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="n">name</span><span class="p">:</span>
+           <span class="n">MoviesServices</span><span class="o">.</span><span class="n">Movies</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">movie</span><span class="p">)</span>
+           <span class="n">deleted</span> <span class="o">=</span> <span class="mi">1</span>
+
+    <span class="k">if</span> <span class="n">deleted</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;No existe la pelicula </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">, por lo que no se hizo ninguna eliminacion&quot;</span>
+
+    <span class="k">return</span> <span class="s2">&quot;La pelicula se elimino con exito&quot;</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="webservice.ksoto.servicio.MoviesServices.getMovie" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">getMovie</span><span class="p">(</span><span class="n">name</span><span class="p">)</span></code>
+
+<a href="#webservice.ksoto.servicio.MoviesServices.getMovie" class="headerlink" title="Permanent link">#</a></h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Este metodo de python itera sobre el arreglo de clase que tenemos, una vez que encuentre una pelicula con el nombre que el usuario le pase como argumento, nos va a devolver toda la pelicula, es decir, el objeto Movie que contiene todos los datos de dicha pelicula.</p>
+
+            <details class="quote">
+              <summary>Source code in <code>webservice/ksoto/servicio.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@srpc</span><span class="p">(</span><span class="n">String</span><span class="p">,</span><span class="n">_returns</span><span class="o">=</span><span class="n">Movie</span><span class="p">)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">getMovie</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Este metodo de python itera sobre el arreglo de clase que tenemos, una vez que encuentre una pelicula con el nombre que el usuario le pase como argumento, nos va a devolver toda la pelicula, es decir, el objeto Movie que contiene todos los datos de dicha pelicula.&quot;&quot;&quot;</span>
+    <span class="k">for</span> <span class="n">movie</span> <span class="ow">in</span> <span class="n">MoviesServices</span><span class="o">.</span><span class="n">Movies</span><span class="p">:</span>
+       <span class="k">if</span> <span class="n">movie</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="n">name</span><span class="p">:</span>
+           <span class="k">return</span> <span class="n">movie</span>
+
+    <span class="k">return</span> <span class="kc">None</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Volver al principio
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.tracking", "navigation.tabs", "navigation.path", "toc.integrate", "navigation.top"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f1b6f286.min.js"></script>
+      
+    
+  </body>
+</html>

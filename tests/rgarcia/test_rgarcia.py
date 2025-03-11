@@ -88,3 +88,4 @@ def test_service_methods(ws):
     op = ws.service.borrar("Tacos Gobernador")
     assert op.status == 'ERROR'
     assert op.message == 'No se encontro una receta con el nombre dado.'
+

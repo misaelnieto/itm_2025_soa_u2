@@ -1,5 +1,5 @@
-from . import recipe_service
+from . import recetas
 
 wsgi_apps = {
-    'recetas/v1': recipe_service.wsgi_app,
+    'recetas': recetas.wsgi_app,
 }

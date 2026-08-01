@@ -18,6 +18,7 @@ dependencies = [
     "pytest-cov>=6.0.0",
     "ruff>=0.9.7",
     "spyne",
+    "sqlmodel>=0.0.24",
     "suds>=1.2.0",
     "werkzeug>=3.1.3",
 ]
